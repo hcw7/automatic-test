@@ -1,0 +1,17 @@
+.classpath
+.project
+.settings/
+.idea/
+.DS_Store
+log*
+*.iml
+bin/
+
+/automatic-console/*.classpath
+/automatic-console/*.project
+/automatic-console/.settings
+/automatic-console/target
+/automatic-console/.DS_Store
+/automatic-console/log*
+/automatic-console/*.iml
+/automatic-console/bin/
