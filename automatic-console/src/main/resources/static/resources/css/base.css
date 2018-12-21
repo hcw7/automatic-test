@@ -1,0 +1,78 @@
+/*--------------------------------------------------
+    [TRANSITION]
+----------------------------------------------------*/
+/* author chaowei.hu 2016/3/3 */
+.maskLayer {
+	pointer-events: none;
+	background-color: #000000;
+	opacity: 0.5;
+	-moz-opacity: 0.5;
+	filter: alpha(opacity = 50);
+}
+
+.inline-bottom {
+	display: inline-block !important;
+	vertical-align: bottom;
+	margin-top: 10px;
+}
+
+.inline-ml20 {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+#filter_form .input-inline {
+	width: 120px !important;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+#filter_form #dateType {
+	width: 100px;
+	margin-right: 5px;
+	margin-top: 0px;
+}
+
+#filter_form .date-picker {
+	width: 100px;
+	margin-right: 5px;
+	margin-top: 0px;
+}
+
+#filter_form .form_datetime {
+	width: 100px;
+	margin-right: 5px;
+	margin-top: 0px;
+}
+
+#filter_form .margin-top-10 {
+	display: inline-block;
+    vertical-align: bottom;
+}
+
+#filter_form .multiselect {
+    margin-top: 10px;
+}
+
+#filter_form .input-range {
+	width: 100px;
+	margin-right: 5px;
+	margin-top: 0px;
+}
+
+.back-green{
+	background-color: #C1FFC1 !important;
+}
+
+.back-yellow{
+	background-color: #FFF68F !important;
+}
+
+.ml10{
+	margin-left: 10px;
+}
+
