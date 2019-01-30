@@ -15,23 +15,27 @@ public class CommonController {
 
     @RequestMapping("/form1")
     public String form1() {
+        System.out.println("form1");
         return "common/form1";
     }
 
     @RequestMapping("/form2")
     public String form2() {
+        System.out.println("form2");
         return "common/form2";
     }
 
 
     @RequestMapping("/table1")
     public String table1() {
+        System.out.println("table1");
         return "common/table1";
     }
 
 
     @RequestMapping("/table2")
     public String table2() {
+        System.out.println("table2");
         return "common/table2";
     }
 

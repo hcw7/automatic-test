@@ -63,7 +63,7 @@ desired effect
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="javascript:void(0);" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>自动化</b>平台</span>
       <!-- logo for regular state and mobile devices -->
@@ -259,23 +259,33 @@ desired effect
       <!-- /.search form -->
 
       <!-- Sidebar Menu -->
-      <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HEADER</li>
-        <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="/template/form1" target="menuFrame"><i class="fa fa-link"></i><span>表单一</span></a></li>
-        <li><a href="/template/form2" target="menuFrame"><i class="fa fa-link"></i> <span>表单二</span></a></li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>复杂页面</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="/template/table1" target="menuFrame">表格1</a></li>
-            <li><a href="/template/table2" target="menuFrame">表格2</a></li>
-          </ul>
-        </li>
-      </ul>
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">菜单</li>
+            <li class="active treeview">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i> <span>用户管理</span>
+                    <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="active"><a href="javascript:void(0);" onclick="skip_(this,'/template/table1')"><i class="fa fa-circle-o"></i> 用户浏览</a></li>
+                    <li><a href="javascript:void(0);" onclick="skip_(this,'/template/table2')"><i class="fa fa-circle-o"></i> 添加用户</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-files-o"></i> <span>文章管理</span>
+                    <span class="pull-right-container">
+                          <span class="label label-primary pull-right">4</span>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a  href="javascript:void(0);" onclick="skip_(this,'/template/form1')"><i class="fa fa-circle-o"></i>文章概览</a></li>
+                    <li><a  href="javascript:void(0);" onclick="skip_(this,'/template/form2')"><i class="fa fa-circle-o"></i> 添加文章</a></li>
+                </ul>
+            </li>
+        </ul>
       <!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
@@ -300,7 +310,6 @@ desired effect
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
-      <iframe id="menuFrame" name="menuFrame" src="common/form.html" style="overflow:visible;" scrolling="yes" frameborder="no" height="100%" width="100%"></iframe>
     </section>
     <!-- /.content -->
   </div>
@@ -411,7 +420,22 @@ desired effect
 </html>
 <script>
     $(function () {
-        var height=window.screen.availHeight -100;
-        $('.content').css('height', height + 'px');
+
     });
+
+    function skip_(self_, url) {
+        $(".active").each(function () {
+            $(this).removeClass("active");
+        });
+
+        $(self_).parents("li").addClass("active");
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            success: function (data) {
+                $(".content-wrapper .content").html(data);
+            }
+        });
+    }
 </script>
