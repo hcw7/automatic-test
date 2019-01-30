@@ -261,7 +261,7 @@ desired effect
       <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">菜单</li>
-            <li class="active treeview">
+            <li class="treeview">
                 <a href="#">
                     <i class="fa fa-dashboard"></i> <span>用户管理</span>
                     <span class="pull-right-container">
@@ -269,7 +269,7 @@ desired effect
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="javascript:void(0);" onclick="skip_(this,'/template/table1')"><i class="fa fa-circle-o"></i> 用户浏览</a></li>
+                    <li><a href="javascript:void(0);" onclick="skip_(this,'/template/table1')"><i class="fa fa-circle-o"></i> 用户浏览</a></li>
                     <li><a href="javascript:void(0);" onclick="skip_(this,'/template/table2')"><i class="fa fa-circle-o"></i> 添加用户</a></li>
                 </ul>
             </li>
@@ -420,6 +420,8 @@ desired effect
 </html>
 <script>
     $(function () {
+        $(".sidebar-menu").children(".treeview").addClass("active").find("li").first().addClass("active");
+        $(".treeview-menu").find("a").first().click();
 
     });
 
